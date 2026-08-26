@@ -21,6 +21,7 @@ app.get("/user/:id/json", async(req,res) => {
 });
 
 
+// Hash me store karna is thoda sa beneficial => can access/update single fields 
 /* 2. Hash method:  I don't want to store data in strings now, Storing complete data as an Object*/
 app.post("/user/:id/hash", async(req,res) => {
     await redis.hset(`user:${req.params.id}:hash`, req.body);
